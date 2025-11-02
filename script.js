@@ -1,9 +1,9 @@
 const interns = [
-  { name: "Alice", scores: [78, 85, 56, 82, 88] },
-  { name: "Ben", scores: [92, 81, 76, 95, 89] },
-  { name: "Cynthia", scores: [85, 90, 87, 91, 88] },
-  { name: "David", scores: [70, 75, 72, 68, 74] },
-  { name: "Ella", scores: [88, 93, 95, 90, 91] }
+  { name: "Prosper", scores: [100, 8.5, 8, 5, 6] },
+  { name: "Ben", scores: [92, 6, 8, 8, 7] },
+  { name: "Cynthia", scores: [100, 10, 10, 9, 9] },
+  { name: "David", scores: [70, 10, 6, 9, 9] },
+  { name: "Ella", scores: [88, 9, 9.5, 8.5, 9] }
 ];
 
 function calculateAverage(scores) {
