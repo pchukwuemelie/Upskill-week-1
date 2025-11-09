@@ -1,17 +1,53 @@
-const interns = [
-  { name: "Prosper", scores: [100, 8.5, 8, 5, 6] },
-  { name: "Ben", scores: [92, 6, 8, 8, 7] },
-  { name: "Cynthia", scores: [100, 10, 10, 9, 9] },
-  { name: "David", scores: [70, 10, 6, 9, 9] },
-  { name: "Ella", scores: [88, 9, 9.5, 8.5, 9] }
-];
+const nameInput = document.getElementById("nameInput")
+const greeting = document.getElementById("greeting")
 
-function calculateAverage(scores) {
-  const total = scores.reduce((sum, score) => sum + score, 0);
-  return (total / scores.length).toFixed(2);
-}
+nameInput.addEventListener ("input", () =>{
+    const name = nameInput.value.trim();
+    if (name) {
+        greeting.innerText = `Hello, ${name}`;
+        greeting.style.color = "green";
+        greeting.style.fontweight = "bold";
+    } else {
+        greeting.innerText = "Hello, friend";
+        greeting.style.color = "black";
+        greeting.style.fontweight = "normal";
+    }
+});
 
-interns.forEach(intern => {
-  const average = calculateAverage(intern.scores);
-  console.log(`Intern: ${intern.name} | Average Score: ${average}`);
+const moodBox = document.getElementById("moodBox");
+const growBtn = document.getElementById("growBtn");
+const shrinkBtn = document.getElementById("shrinkBtn");
+
+let boxSize = 150;
+
+growBtn.addEventListener("click", () => {
+    boxSize += 20;
+    moodBox.style.width = boxSize + "px";
+    moodBox.style.height = boxSize + "px";
+}) 
+
+shrinkBtn.addEventListener("click", () => {
+    if (boxSize > 50) {
+        boxSize -= 20
+        moodBox.style.width = boxSize + "px";
+        moodBox.style.height = boxSize + "px";
+    }
+});
+
+const toggleMoodBtn = document.getElementById("toggleMoodBtn")
+const secretBtn = document.getElementById("secretBtn")
+const secret = document.getElementById("secret")
+
+toggleMoodBtn.addEventListener ("click", () => {
+    document.body.classList.toggle("night");
+});
+
+secretBtn.addEventListener ("click", () => {
+    if (secret.style.display === "none") {
+        secret.style.display = "block";
+        secretBtn.innerText = "Hide Secret Message";
+    } else {
+        secret.style.display = "none";
+        secretBtn.innerText = "Show Secret Message";
+    }
 });
